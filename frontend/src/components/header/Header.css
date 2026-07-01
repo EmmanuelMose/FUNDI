@@ -17,7 +17,7 @@
 }
 
 .header--scrolled {
-  background: rgba(10, 22, 40, 0.95);
+  background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 12px 0;
@@ -49,14 +49,14 @@
 .logo-icon {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, #1e73e8, #4fc3f7);
+  background: linear-gradient(135deg, #2d2d2d, #4a4a4a);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(30, 115, 232, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
 }
 
@@ -75,7 +75,7 @@
 .logo-suffix {
   font-size: 1.5rem;
   font-weight: 300;
-  color: #4fc3f7;
+  color: #f5a623;
   letter-spacing: -0.5px;
   line-height: 1;
 }
@@ -119,7 +119,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #4fc3f7;
+  background: #f5a623;
   transition: width 0.3s ease;
   border-radius: 2px;
 }
@@ -189,14 +189,14 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #1e73e8, #4fc3f7);
+  background: linear-gradient(135deg, #2d2d2d, #4a4a4a);
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(30, 115, 232, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(30, 115, 232, 0.45);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
 
 .menu-toggle {
@@ -317,7 +317,7 @@
     width: 320px;
     max-width: 85%;
     height: 100vh;
-    background: rgba(10, 22, 40, 0.98);
+    background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -363,7 +363,7 @@
   }
 
   .nav-link:hover {
-    color: #4fc3f7;
+    color: #f5a623;
     padding-left: 8px;
   }
 
@@ -544,7 +544,7 @@
 }
 
 .header-nav::-webkit-scrollbar-thumb {
-  background: rgba(79, 195, 247, 0.3);
+  background: rgba(245, 166, 35, 0.3);
   border-radius: 2px;
 }
 

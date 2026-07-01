@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Hero.css';
-import heroImage from '../assets/images/HeroImage.jpg';
+import heroImage from '../../assets/images/HeroImage.jpg';
 
 const Hero: React.FC = () => {
   const [location, setLocation] = useState('');
