@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const [isCustomer, setIsCustomer] = useState(true);
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const toggleLoginType = () => {
     setIsCustomer(!isCustomer);
+  };
+
+  const handleCreateAccount = () => {
+    navigate('/register');
+  };
+
+  const handleForgotPassword = () => {
+    navigate('/forgot-password');
   };
 
   return (
@@ -85,7 +95,9 @@ const Login: React.FC = () => {
                 />
                 <span>Remember me</span>
               </label>
-              <a href="#" className="forgot-link">Forgot password?</a>
+              <button type="button" className="forgot-link" onClick={handleForgotPassword}>
+                Forgot password?
+              </button>
             </div>
 
             <button type="submit" className="signin-btn">Sign in</button>
@@ -94,7 +106,7 @@ const Login: React.FC = () => {
           <div className="login-footer">
             <p className="divider-text">or</p>
             <p className="create-account">
-              Don't have an account? <a href="#">Create one</a>
+              Don't have an account? <button type="button" onClick={handleCreateAccount} className="create-link">Create one</button>
             </p>
             <button 
               className="switch-btn"
@@ -108,7 +120,6 @@ const Login: React.FC = () => {
         <div className="login-right">
           <div className="feature-grid">
             <div className="feature-item">
-              <div className="feature-icon">📝</div>
               <h4 className="feature-title">Post your request</h4>
               <p className="feature-desc">
                 Describe what you need and drop your location - takes under 60 seconds
@@ -116,7 +127,6 @@ const Login: React.FC = () => {
             </div>
 
             <div className="feature-item">
-              <div className="feature-icon">⚡</div>
               <h4 className="feature-title">Get matched instantly</h4>
               <p className="feature-desc">
                 Your job is broadcast to verified technicians near you in real time.
@@ -124,7 +134,6 @@ const Login: React.FC = () => {
             </div>
 
             <div className="feature-item">
-              <div className="feature-icon">💰</div>
               <h4 className="feature-title">Pay securely</h4>
               <p className="feature-desc">
                 Once the job is done to your satisfaction, pay directly from your phone.
