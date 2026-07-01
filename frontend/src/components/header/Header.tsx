@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import logo from "../../assets/images/Logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -38,6 +40,16 @@ const Header: React.FC = () => {
     { label: "How it works", href: "#how-it-works" },
     { label: "For technicians", href: "#technicians" },
   ];
+
+  const handleLogin = () => {
+    closeMenu();
+    navigate("/login");
+  };
+
+  const handleGetStarted = () => {
+    closeMenu();
+    navigate("/register");
+  };
 
   return (
     <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
@@ -75,10 +87,10 @@ const Header: React.FC = () => {
               <span className="phone-icon">📞</span>
               +254 799 160 014
             </a>
-            <button className="btn btn-outline" onClick={closeMenu} type="button">
+            <button className="btn btn-outline" onClick={handleLogin} type="button">
               Log in
             </button>
-            <button className="btn btn-primary" onClick={closeMenu} type="button">
+            <button className="btn btn-primary" onClick={handleGetStarted} type="button">
               Get started
             </button>
           </div>
