@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
+import logo from "../../assets/images/Logo.png";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
     <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
       <div className="header-container">
         <a href="/" className="header-logo" onClick={closeMenu}>
-          <span className="logo-icon">🔧</span>
+          <img src={logo} alt="myFundi Hub Logo" className="logo-image" />
           <span className="logo-text">myFundi</span>
           <span className="logo-suffix">Hub</span>
         </a>
