@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
-import CustomerImage from '../../../assets/images/customerImage.jpeg';
-import TechnicianImage from '../../../assets/images/technicianImage.jpeg';
+import CustomerImage from '../../../assets/images/CustomerImage.jpeg';
+import TechnicianImage from '../../../assets/images/TechnicianImage.jpeg';
 
 interface RegisterFormData {
   firstName: string;
