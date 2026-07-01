@@ -74,6 +74,69 @@ const Services: React.FC = () => {
       title: 'Other Technical',
       description: 'DSTV, WiFi, doorbells & home tech',
       fullDescription: 'General home technology services including DSTV installation, WiFi network setup, doorbell installation, and smart home integration.'
+    },
+    {
+      id: 'painting',
+      icon: '🎨',
+      title: 'Painting & Decorating',
+      description: 'Interior, exterior & wall papering',
+      fullDescription: 'Professional painting and decorating services including interior walls, exterior surfaces, wallpaper installation, and finish coatings.'
+    },
+    {
+      id: 'carpentry',
+      icon: '🔨',
+      title: 'Carpentry',
+      description: 'Furniture, cabinets & woodwork',
+      fullDescription: 'Expert carpentry services covering custom furniture, kitchen cabinets, shelving, doors, and general woodwork repairs.'
+    },
+    {
+      id: 'flooring',
+      icon: '🏠',
+      title: 'Flooring',
+      description: 'Tiles, vinyl, laminate & wood',
+      fullDescription: 'Complete flooring solutions including tile installation, vinyl flooring, laminate fitting, and hardwood floor repairs.'
+    },
+    {
+      id: 'gardening',
+      icon: '🌿',
+      title: 'Gardening',
+      description: 'Lawn care, landscaping & pruning',
+      fullDescription: 'Professional gardening services including lawn maintenance, landscape design, tree pruning, and garden clean-up.'
+    },
+    {
+      id: 'cleaning',
+      icon: '🧹',
+      title: 'Cleaning Services',
+      description: 'Deep cleaning, carpet & upholstery',
+      fullDescription: 'Comprehensive cleaning services including deep cleaning, carpet shampooing, upholstery cleaning, and post-construction clean-up.'
+    },
+    {
+      id: 'moving',
+      icon: '🚚',
+      title: 'Moving & Transport',
+      description: 'Local moves, delivery & logistics',
+      fullDescription: 'Reliable moving and transport services including local moves, furniture delivery, and logistics coordination.'
+    },
+    {
+      id: 'roofing',
+      icon: '🏗️',
+      title: 'Roofing',
+      description: 'Repairs, installation & maintenance',
+      fullDescription: 'Professional roofing services including leak repairs, roof installation, maintenance, and gutter cleaning.'
+    },
+    {
+      id: 'plastering',
+      icon: '🧱',
+      title: 'Plastering',
+      description: 'Walls, ceilings & drywall repair',
+      fullDescription: 'Expert plastering services for walls, ceilings, drywall installation, and surface finishing.'
+    },
+    {
+      id: 'locksmith',
+      icon: '🔑',
+      title: 'Locksmith',
+      description: 'Locks, keys & security systems',
+      fullDescription: 'Professional locksmith services including lock installation, key cutting, security system setup, and emergency lockout assistance.'
     }
   ];
 
@@ -123,13 +186,6 @@ const Services: React.FC = () => {
               )}
             </div>
           ))}
-        </div>
-
-        <div className="services-footer">
-          <div className="footer-content">
-            <h3>FOR CUSTOMERS</h3>
-            <h2>WHY MYFUNDI HUB</h2>
-          </div>
         </div>
       </div>
     </section>
