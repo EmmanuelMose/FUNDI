@@ -4,6 +4,7 @@ import Footer from "../../src/components/footer/Footer";
 import Services from "../components/services/Services";
 import HowItWorks from "../components/howitworks/HowItWorks";
 import Testmonies from "../components/testmonies/Testmonies";
+import ForTechnicians from "../components/fortechnicians/ForTechnicians";
 const LandingPage = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const LandingPage = () => {
       <Services />
       <HowItWorks />
       <Testmonies />
+      <ForTechnicians />
       <Footer />
     </>
   );
