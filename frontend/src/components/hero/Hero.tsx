@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Hero.css';
 import heroImage from '../../assets/images/HeroImage.jpg';
 
 const Hero: React.FC = () => {
-  const [location, setLocation] = useState('');
+  const [] = useState('');
 
   const scrollToServices = () => {
     const el = document.getElementById('services');
