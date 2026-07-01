@@ -1,9 +1,10 @@
+// App.tsx
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "../src/pages/LandingPage";
 import Login from "../src/pages/auth/login/Login";
 import Register from "../src/pages/auth/register/Register";
 import ForgotPassword from "../src/pages/auth/forgetpassword/ForgetPassword";
-import VerifyResetCode from "../src/pages/auth/resetpassword/ResetPassword";
+import VerifyResetCode from "../src/pages/auth/verifyresetcode/VerifyResetCode";
 import ResetPassword from "../src/pages/auth/resetpassword/ResetPassword";
 
 const router = createBrowserRouter([

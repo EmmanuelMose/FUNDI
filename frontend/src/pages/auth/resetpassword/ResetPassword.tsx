@@ -109,7 +109,7 @@ const ResetPassword: React.FC = () => {
 
         <div className="reset-password-right">
           <div className="reset-success-info">
-            <div className="reset-success-icon">✅</div>
+            <div className="reset-success-icon"></div>
             <h3 className="reset-success-title">Password Reset</h3>
             <p className="reset-success-desc">
               Your new password must be strong and unique. We recommend using a combination of uppercase, lowercase, numbers, and special characters.
