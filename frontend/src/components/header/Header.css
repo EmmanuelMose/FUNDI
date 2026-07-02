@@ -11,7 +11,7 @@
   right: 0;
   z-index: 1000;
   background: transparent;
-  padding: 20px 0;
+  padding: 16px 0;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: 100%;
 }
@@ -20,7 +20,7 @@
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 12px 0;
+  padding: 10px 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -33,7 +33,6 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  gap: 20px;
 }
 
 .header-logo {
@@ -44,6 +43,7 @@
   cursor: pointer;
   z-index: 1001;
   flex-shrink: 0;
+  margin-right: 40px;
 }
 
 .logo-image {
@@ -79,13 +79,13 @@
   align-items: center;
   gap: 32px;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -96,7 +96,7 @@
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
@@ -129,19 +129,20 @@
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-shrink: 0;
+  margin-left: 32px;
 }
 
 .contact-phone {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.9);
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 8px;
   transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.05);
@@ -156,13 +157,13 @@
 }
 
 .phone-icon {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .btn {
-  padding: 10px 24px;
-  border-radius: 10px;
-  font-size: 0.9rem;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -185,12 +186,12 @@
 .btn-primary {
   background: linear-gradient(135deg, #e08a0e, #c47a0c);
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(224, 138, 14, 0.35);
+  box-shadow: 0 4px 15px rgba(224, 138, 14, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(224, 138, 14, 0.45);
+  box-shadow: 0 8px 25px rgba(224, 138, 14, 0.4);
 }
 
 .menu-toggle {
@@ -202,8 +203,8 @@
   padding: 8px;
   cursor: pointer;
   z-index: 1001;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
@@ -216,7 +217,7 @@
 
 .menu-toggle .bar {
   display: block;
-  width: 28px;
+  width: 26px;
   height: 2.5px;
   background: #ffffff;
   border-radius: 2px;
@@ -257,22 +258,30 @@
 }
 
 @media (max-width: 1100px) {
+  .header-logo {
+    margin-right: 0;
+  }
+
+  .nav-actions {
+    margin-left: 0;
+  }
+
   .header-nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 380px;
-    max-width: 80%;
+    width: 360px;
+    max-width: 85%;
     height: 100vh;
     background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: flex-start;
-    padding: 100px 35px 35px;
-    gap: 35px;
+    padding: 100px 32px 32px;
+    gap: 30px;
     transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
     align-items: stretch;
     overflow-y: auto;
     z-index: 1000;
@@ -290,7 +299,7 @@
 
   .nav-item {
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .nav-item:last-child {
@@ -298,9 +307,9 @@
   }
 
   .nav-link {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     display: block;
-    padding: 18px 0;
+    padding: 16px 0;
     width: 100%;
     color: rgba(255, 255, 255, 0.9);
   }
@@ -317,15 +326,15 @@
   .nav-actions {
     flex-direction: column;
     width: 100%;
-    gap: 14px;
-    margin-top: 15px;
+    gap: 12px;
+    margin-top: 10px;
   }
 
   .contact-phone {
     width: 100%;
     justify-content: center;
-    padding: 14px 20px;
-    font-size: 1rem;
+    padding: 12px 18px;
+    font-size: 0.95rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
@@ -333,8 +342,8 @@
   .btn {
     width: 100%;
     justify-content: center;
-    padding: 16px 24px;
-    font-size: 1rem;
+    padding: 14px 24px;
+    font-size: 0.95rem;
   }
 
   .btn-outline {
@@ -365,63 +374,7 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 16px 0;
-  }
-
-  .header--scrolled {
-    padding: 10px 0;
-  }
-
-  .header-container {
-    padding: 0 16px;
-  }
-
-  .logo-image {
-    width: 38px;
-    height: 38px;
-  }
-
-  .logo-text,
-  .logo-suffix {
-    font-size: 1.3rem;
-  }
-
-  .header-nav {
-    width: 340px;
-    max-width: 85%;
-    padding: 90px 30px 30px;
-    gap: 30px;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
-    padding: 16px 0;
-  }
-
-  .contact-phone {
-    padding: 12px 18px;
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    padding: 14px 22px;
-    font-size: 0.95rem;
-  }
-
-  .menu-toggle {
-    width: 44px;
-    height: 44px;
-  }
-
-  .menu-toggle .bar {
-    width: 26px;
-    height: 2.5px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 12px 0;
+    padding: 14px 0;
   }
 
   .header--scrolled {
@@ -429,35 +382,34 @@
   }
 
   .header-container {
-    padding: 0 12px;
+    padding: 0 16px;
   }
 
   .logo-image {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
   }
 
   .logo-text,
   .logo-suffix {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .header-nav {
-    width: 100%;
-    max-width: 100%;
-    padding: 80px 20px 20px;
+    width: 320px;
+    max-width: 85%;
+    padding: 85px 28px 28px;
     gap: 25px;
   }
 
   .nav-link {
-    font-size: 1rem;
+    font-size: 1.05rem;
     padding: 14px 0;
   }
 
   .contact-phone {
-    font-size: 0.85rem;
     padding: 10px 16px;
+    font-size: 0.9rem;
   }
 
   .btn {
@@ -466,19 +418,79 @@
   }
 
   .menu-toggle {
-    width: 38px;
-    height: 38px;
-    padding: 6px;
+    width: 40px;
+    height: 40px;
   }
 
   .menu-toggle .bar {
-    width: 22px;
+    width: 24px;
+    height: 2.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .header--scrolled {
+    padding: 6px 0;
+  }
+
+  .header-container {
+    padding: 0 12px;
+  }
+
+  .logo-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+  }
+
+  .logo-text,
+  .logo-suffix {
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    gap: 6px;
+  }
+
+  .header-nav {
+    width: 100%;
+    max-width: 100%;
+    padding: 75px 20px 20px;
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+
+  .contact-phone {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .menu-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+  }
+
+  .menu-toggle .bar {
+    width: 20px;
     height: 2px;
-    gap: 4px;
   }
 
   .menu-toggle .close-icon {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -499,7 +511,7 @@
   }
 
   .nav-list {
-    gap: 40px;
+    gap: 48px;
   }
 
   .nav-link {
@@ -507,13 +519,13 @@
   }
 
   .btn {
-    padding: 12px 28px;
+    padding: 10px 28px;
     font-size: 0.95rem;
   }
 
   .contact-phone {
-    font-size: 1rem;
-    padding: 10px 20px;
+    font-size: 0.95rem;
+    padding: 8px 18px;
   }
 }
 
