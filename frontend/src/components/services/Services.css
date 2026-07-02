@@ -23,6 +23,26 @@
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 12px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.services-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: #f5a623;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.services-title:hover::after {
+  width: 60px;
 }
 
 .services-subtitle {
@@ -31,6 +51,11 @@
   color: #1a1a1a;
   margin-bottom: 16px;
   letter-spacing: -1px;
+  transition: color 0.3s ease;
+}
+
+.services-subtitle:hover {
+  color: #f5a623;
 }
 
 .services-description {
@@ -38,7 +63,14 @@
   color: rgba(26, 26, 26, 0.7);
   max-width: 600px;
   margin: 0 auto 12px;
-  line-height: 1.6;
+  line-height: 1.8;
+  text-align: left;
+  padding: 0 20px;
+  transition: color 0.3s ease;
+}
+
+.services-description:hover {
+  color: rgba(26, 26, 26, 0.9);
 }
 
 .services-hint {
@@ -46,6 +78,12 @@
   color: rgba(245, 166, 35, 0.7);
   font-weight: 500;
   letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.services-hint:hover {
+  color: #f5a623;
+  transform: scale(1.05);
 }
 
 .stats-container {
@@ -62,6 +100,12 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: default;
+}
+
+.stat-item:hover {
+  transform: translateY(-6px) scale(1.05);
 }
 
 .stat-number {
@@ -69,6 +113,12 @@
   font-weight: 700;
   color: #f5a623;
   letter-spacing: -0.5px;
+  transition: all 0.4s ease;
+}
+
+.stat-item:hover .stat-number {
+  color: #e08a0e;
+  text-shadow: 0 0 30px rgba(245, 166, 35, 0.3);
 }
 
 .stat-label {
@@ -76,6 +126,11 @@
   font-weight: 600;
   color: rgba(26, 26, 26, 0.4);
   letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.stat-item:hover .stat-label {
+  color: rgba(26, 26, 26, 0.7);
 }
 
 .services-grid {
@@ -103,21 +158,26 @@
 .service-card:hover {
   background: #ffffff;
   border-color: rgba(245, 166, 35, 0.3);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
 }
 
 .service-card.hovered {
   background: #ffffff;
   border-color: #f5a623;
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(245, 166, 35, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(245, 166, 35, 0.15);
 }
 
 .service-icon {
   font-size: 2rem;
   margin-bottom: 12px;
   display: block;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.15) rotate(-8deg);
 }
 
 .service-title {
@@ -125,23 +185,28 @@
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 8px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
 .service-card:hover .service-title {
   color: #f5a623;
+  transform: translateX(4px);
 }
 
 .service-description {
   font-size: 0.85rem;
   color: rgba(26, 26, 26, 0.5);
-  line-height: 1.5;
+  line-height: 1.6;
   flex: 1;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
 .service-card:hover .service-description {
-  color: rgba(26, 26, 26, 0.7);
+  color: rgba(26, 26, 26, 0.75);
 }
 
 .service-tooltip {
@@ -177,19 +242,33 @@
 .service-tooltip p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.85rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
+  text-align: left;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(12px);
   }
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.service-card.hovered .service-icon {
+  animation: pulse 1s ease-in-out infinite;
 }
 
 @media (max-width: 1200px) {
@@ -211,6 +290,11 @@
     gap: 30px;
     flex-wrap: wrap;
   }
+
+  .services-description {
+    text-align: center;
+    padding: 0 10px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -229,11 +313,14 @@
 
   .services-description {
     font-size: 0.95rem;
+    text-align: center;
+    padding: 0;
   }
 
   .stats-container {
-    gap: 20px;
+    gap: 16px;
     padding: 20px 0 30px;
+    flex-wrap: wrap;
   }
 
   .stat-number {
@@ -246,13 +333,17 @@
   }
 
   .service-tooltip {
-    min-width: 180px;
-    max-width: 220px;
-    padding: 12px 16px;
+    min-width: 160px;
+    max-width: 200px;
+    padding: 12px 14px;
   }
 
   .service-tooltip p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .services-title {
+    font-size: 0.75rem;
   }
 }
 
@@ -273,38 +364,82 @@
 
   .services-description {
     font-size: 0.85rem;
+    text-align: center;
+    padding: 0;
   }
 
   .services-hint {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .service-card {
-    padding: 16px 12px;
-    min-height: 130px;
+    padding: 14px 10px;
+    min-height: 120px;
     border-radius: 12px;
   }
 
   .service-icon {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
   }
 
   .service-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
   }
 
   .service-description {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    line-height: 1.4;
   }
 
   .stat-number {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .stat-label {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     letter-spacing: 1px;
+  }
+
+  .stats-container {
+    gap: 12px;
+  }
+
+  .service-tooltip {
+    min-width: 140px;
+    max-width: 180px;
+    padding: 10px 12px;
+  }
+
+  .service-tooltip p {
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 360px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .service-card {
+    padding: 10px 8px;
+    min-height: 100px;
+    border-radius: 10px;
+  }
+
+  .service-icon {
+    font-size: 1.2rem;
+  }
+
+  .service-title {
+    font-size: 0.7rem;
+  }
+
+  .service-description {
+    font-size: 0.65rem;
   }
 }
 
@@ -324,5 +459,13 @@
   .service-card {
     padding: 32px 24px;
     min-height: 200px;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+  }
+
+  .services-description {
+    max-width: 700px;
   }
 }
