@@ -11,6 +11,7 @@ import CustomerDashboard from "../src/pages/dashboard/CustomerDashboard/Customer
 import TechnicianDashboard from "../src/pages/dashboard/TechnicianDashboard/TechnicianDashboard";
 import AdminDashboard from "../src/pages/dashboard/AdminDashboard/AdminDashboard";
 
+//For Admin Dashboard
 import AdDashboard from "../src/pages/dashboard/AdminDashboard/admindashboard/AdDashboard";
 import Users from "../src/pages/dashboard/AdminDashboard/users/Users";
 import Fundis from "../src/pages/dashboard/AdminDashboard/fundis/Fundis";
@@ -19,6 +20,7 @@ import AdminPayments from "../src/pages/dashboard/AdminDashboard/payments/Paymen
 import Reports from "../src/pages/dashboard/AdminDashboard/reports/Reports";
 import AdminSettings from "../src/pages/dashboard/AdminDashboard/settings/Settings";
 
+//For Customer Dashboard.
 import CusDashboard from "../src/pages/dashboard/CustomerDashboard/cusdashboard/CusDashboard";
 import BookService from "../src/pages/dashboard/CustomerDashboard/bookservice/BookService";
 import MyBookings from "../src/pages/dashboard/CustomerDashboard/mybookings/MyBookings";
@@ -27,6 +29,7 @@ import CustomerPayments from "../src/pages/dashboard/CustomerDashboard/payments/
 import CustomerNotifications from "../src/pages/dashboard/CustomerDashboard/notifications/Notifications";
 import CustomerSettings from "../src/pages/dashboard/CustomerDashboard/settings/Settings";
 
+//For  Technician Dashbord
 import TechDashboard from "../src/pages/dashboard/TechnicianDashboard/techdashboard/TechDashboard";
 import AvailableJobs from "../src/pages/dashboard/TechnicianDashboard/availablejobs/AvailableJobs";
 import MyJobs from "../src/pages/dashboard/TechnicianDashboard/myjobs/MyJobs";
@@ -77,11 +80,11 @@ const router = createBrowserRouter([
     element: <TechnicianDashboard />,
     children: [
       { path: "", element: <TechDashboard /> },
-      { path: "available-jobs", element: <AvailableJobs /> },
-      { path: "my-jobs", element: <MyJobs /> },
-      { path: "earnings", element: <Earnings /> },
-      { path: "notifications", element: <TechNotifications /> },
-      { path: "settings", element: <TechSettings /> },
+      { path: "techavailablejobs", element: <AvailableJobs /> },
+      { path: "techmyjobs", element: <MyJobs /> },
+      { path: "techearnings", element: <Earnings /> },
+      { path: "technotifications", element: <TechNotifications /> },
+      { path: "techsettings", element: <TechSettings /> },
     ],
   },
   {

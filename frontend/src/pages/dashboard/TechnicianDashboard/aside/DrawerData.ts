@@ -17,39 +17,39 @@ export type DrawerData = {
 
 export const technicianDrawerData: DrawerData[] = [
   {
-    id: "dashboard",
+    id: "techdashboard",
     label: "Dashboard",
     icon: AiOutlineDashboard,
     link: "",
   },
   {
-    id: "available-jobs",
+    id: "techavailablejobs",
     label: "Available Jobs",
     icon: AiOutlineSearch,
-    link: "available-jobs",
+    link: "techavailablejobs",
   },
   {
-    id: "my-jobs",
+    id: "techmyjobs",
     label: "My Jobs",
     icon: AiOutlineBook,
-    link: "my-jobs",
+    link: "techmyjobs",
   },
   {
-    id: "earnings",
+    id: "techearnings",
     label: "Earnings",
     icon: AiOutlineWallet,
-    link: "earnings",
+    link: "techearnings",
   },
   {
-    id: "notifications",
+    id: "technotifications",
     label: "Notifications",
     icon: AiOutlineBell,
-    link: "notifications",
+    link: "technotifications",
   },
   {
-    id: "settings",
+    id: "techsettings",
     label: "Settings",
     icon: AiOutlineSetting,
-    link: "settings",
+    link: "techsettings",
   },
 ];
