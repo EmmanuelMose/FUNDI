@@ -1,3 +1,4 @@
+// Login.tsx (Updated with dashboard navigation)
 import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +19,15 @@ const Login: React.FC = () => {
 
   const handleForgotPassword = () => {
     navigate('/forgot-password');
+  };
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isCustomer) {
+      navigate('/customer-dashboard');
+    } else {
+      navigate('/technician-dashboard');
+    }
   };
 
   return (
@@ -51,7 +61,7 @@ const Login: React.FC = () => {
             </button>
           </div>
 
-          <form className="login-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="login-form" onSubmit={handleLogin}>
             <div className="form-group">
               <label className="form-label">
                 {isCustomer ? 'Username or Email' : 'Technician account'}
