@@ -1,5 +1,5 @@
 // aside/AdminDrawer.tsx
-//import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { adminDrawerData, type DrawerData } from './DrawerData';
 import './AdminDrawer.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -7,16 +7,12 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 type AdminDrawerProps = {
   isSidebarOpen: boolean;
   onToggle: () => void;
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
   isMobile: boolean;
 };
 
 const AdminDrawer = ({ 
   isSidebarOpen, 
   onToggle, 
-  activeTab, 
-  setActiveTab,
   isMobile 
 }: AdminDrawerProps) => {
   return (
@@ -49,16 +45,18 @@ const AdminDrawer = ({
 
         <nav className="drawer-nav">
           {adminDrawerData.map((item: DrawerData) => (
-            <button
+            <NavLink
               key={item.id}
-              className={`drawer-item ${activeTab === item.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(item.id)}
+              to={item.link}
+              className={({ isActive }) =>
+                `drawer-item ${isActive ? 'active' : ''}`
+              }
             >
               <span className="drawer-icon">
                 <item.icon size={isSidebarOpen ? 20 : 22} />
               </span>
               {isSidebarOpen && <span className="drawer-label">{item.label}</span>}
-            </button>
+            </NavLink>
           ))}
         </nav>
 

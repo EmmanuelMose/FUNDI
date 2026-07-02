@@ -126,6 +126,7 @@
   width: 100%;
   text-align: left;
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .drawer-item:hover {
@@ -286,11 +287,6 @@
 
   .drawer-role .role-portal {
     font-size: 0.6rem;
-  }
-
-  .admin-drawer.open .drawer-brand .brand-text,
-  .admin-drawer.open .drawer-brand .brand-suffix {
-    font-size: 1.1rem;
   }
 }
 

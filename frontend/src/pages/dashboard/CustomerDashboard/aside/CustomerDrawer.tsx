@@ -1,5 +1,5 @@
 // aside/CustomerDrawer.tsx
-//import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { drawerData, type DrawerData } from './DrawerData';
 import './CustomerDrawer.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -7,21 +7,16 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 type CustomerDrawerProps = {
   isSidebarOpen: boolean;
   onToggle: () => void;
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
   isMobile: boolean;
 };
 
 const CustomerDrawer = ({ 
   isSidebarOpen, 
   onToggle, 
-  activeTab, 
-  setActiveTab,
   isMobile 
 }: CustomerDrawerProps) => {
   return (
     <>
-      {/* Mobile Menu Button */}
       {isMobile && (
         <button 
           className={`mobile-menu-btn ${isSidebarOpen ? 'hidden' : ''}`}
@@ -50,16 +45,18 @@ const CustomerDrawer = ({
 
         <nav className="drawer-nav">
           {drawerData.map((item: DrawerData) => (
-            <button
+            <NavLink
               key={item.id}
-              className={`drawer-item ${activeTab === item.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(item.id)}
+              to={item.link}
+              className={({ isActive }) =>
+                `drawer-item ${isActive ? 'active' : ''}`
+              }
             >
               <span className="drawer-icon">
                 <item.icon size={isSidebarOpen ? 20 : 22} />
               </span>
               {isSidebarOpen && <span className="drawer-label">{item.label}</span>}
-            </button>
+            </NavLink>
           ))}
         </nav>
 

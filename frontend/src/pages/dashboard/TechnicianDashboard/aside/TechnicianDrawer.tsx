@@ -1,3 +1,5 @@
+// aside/TechnicianDrawer.tsx
+import { NavLink } from 'react-router-dom';
 import { technicianDrawerData, type DrawerData } from './DrawerData';
 import './TechnicianDrawer.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -5,16 +7,12 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 type TechnicianDrawerProps = {
   isSidebarOpen: boolean;
   onToggle: () => void;
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
   isMobile: boolean;
 };
 
 const TechnicianDrawer = ({ 
   isSidebarOpen, 
   onToggle, 
-  activeTab, 
-  setActiveTab,
   isMobile 
 }: TechnicianDrawerProps) => {
   return (
@@ -47,16 +45,18 @@ const TechnicianDrawer = ({
 
         <nav className="drawer-nav">
           {technicianDrawerData.map((item: DrawerData) => (
-            <button
+            <NavLink
               key={item.id}
-              className={`drawer-item ${activeTab === item.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(item.id)}
+              to={item.link}
+              className={({ isActive }) =>
+                `drawer-item ${isActive ? 'active' : ''}`
+              }
             >
               <span className="drawer-icon">
                 <item.icon size={isSidebarOpen ? 20 : 22} />
               </span>
               {isSidebarOpen && <span className="drawer-label">{item.label}</span>}
-            </button>
+            </NavLink>
           ))}
         </nav>
 
