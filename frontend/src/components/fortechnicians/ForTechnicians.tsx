@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ForTechnicians.css';
-import TechnicianImage from '../../assets/images/TechnicianImage.jpeg';
+import TechnicianImage from '../../assets/images/TechnicianImage.jpg';
 
 const ForTechnicians: React.FC = () => {
   const navigate = useNavigate();

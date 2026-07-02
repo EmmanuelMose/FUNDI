@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
 import CustomerImage from '../../../assets/images/CustomerImage.jpeg';
-import TechnicianImage from '../../../assets/images/TechnicianImage.jpeg';
+import TechnicianImage from '../../../assets/images/TechnicianImage.jpg';
 
 interface RegisterFormData {
   firstName: string;
