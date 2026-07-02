@@ -1,6 +1,6 @@
 import React from 'react';
 import './ForTechnicians.css';
-import technicianImage from '../../assets/images/TechnicianImage.jpeg';
+import TechnicianImage from '../../assets/images/TechnicianImage.jpeg';
 
 const ForTechnicians: React.FC = () => {
   return (
@@ -37,7 +37,7 @@ const ForTechnicians: React.FC = () => {
         </div>
 
         <div className="technicians-illustration">
-          <img src={technicianImage} alt="Technicians" className="technicians-image" />
+          <img src={TechnicianImage} alt="Technicians" className="technicians-image" />
         </div>
       </div>
     </section>
