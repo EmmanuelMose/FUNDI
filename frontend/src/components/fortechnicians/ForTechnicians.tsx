@@ -1,8 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ForTechnicians.css';
 import TechnicianImage from '../../assets/images/TechnicianImage.jpeg';
 
 const ForTechnicians: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleApply = () => {
+    navigate('/register');
+  };
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
   return (
     <section className="for-technicians" id="technicians">
       <div className="technicians-overlay"></div>
@@ -18,9 +29,9 @@ const ForTechnicians: React.FC = () => {
           </p>
 
           <div className="technicians-actions">
-            <button className="btn-apply">Apply as a technician →</button>
+            <button className="btn-apply" onClick={handleApply}>Apply as a technician →</button>
             <div className="login-link">
-              Already registered? <a href="#login">Log in</a>
+              Already registered? <button className="login-btn" onClick={handleLogin}>Log in</button>
             </div>
           </div>
 

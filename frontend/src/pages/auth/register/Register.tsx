@@ -21,7 +21,6 @@ interface RegisterFormData {
 
 const Register: React.FC = () => {
   const [role, setRole] = useState<'customer' | 'technician' | 'admin'>('customer');
-  const [showAdminFields, setShowAdminFields] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -45,7 +44,6 @@ const Register: React.FC = () => {
 
   const handleRoleSelect = (selectedRole: 'customer' | 'technician' | 'admin') => {
     setRole(selectedRole);
-    setShowAdminFields(selectedRole === 'admin');
   };
 
   return (
