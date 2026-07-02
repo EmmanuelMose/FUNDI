@@ -1,5 +1,3 @@
-// aside/TechnicianDrawer.tsx
-import React from 'react';
 import { technicianDrawerData, type DrawerData } from './DrawerData';
 import './TechnicianDrawer.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
