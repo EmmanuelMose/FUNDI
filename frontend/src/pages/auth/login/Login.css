@@ -283,19 +283,34 @@
   text-decoration: underline;
 }
 
+.switch-buttons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 .switch-btn {
+  flex: 1;
   background: none;
   border: none;
   color: rgba(255, 255, 255, 0.4);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  min-width: 80px;
 }
 
 .switch-btn:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.switch-btn.active {
   color: #e08a0e;
   border-color: rgba(224, 138, 14, 0.2);
   background: rgba(224, 138, 14, 0.05);
@@ -369,6 +384,14 @@
   .login-title {
     font-size: 1.6rem;
   }
+
+  .switch-buttons {
+    justify-content: center;
+  }
+
+  .switch-btn {
+    flex: 0 1 auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -426,6 +449,15 @@
   .feature-desc {
     font-size: 0.85rem;
   }
+
+  .switch-buttons {
+    gap: 6px;
+  }
+
+  .switch-btn {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -464,11 +496,12 @@
 
   .login-tabs {
     margin-bottom: 24px;
+    gap: 6px;
   }
 
   .tab-btn {
-    padding: 6px 12px;
-    font-size: 0.75rem;
+    padding: 6px 10px;
+    font-size: 0.7rem;
   }
 
   .form-group {
@@ -522,13 +555,19 @@
     font-size: 0.8rem;
   }
 
+  .switch-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
   .switch-btn {
     font-size: 0.75rem;
-    padding: 6px 12px;
+    padding: 8px 12px;
+    text-align: center;
   }
 
   .feature-grid {
-    gap: 24px;
+    gap: 20px;
   }
 
   .feature-title {
@@ -560,11 +599,11 @@
 
 @media (max-width: 360px) {
   .login-left {
-    padding: 20px 12px;
+    padding: 16px 12px;
   }
 
   .login-right {
-    padding: 20px 12px;
+    padding: 16px 12px;
   }
 
   .login-brand {
@@ -576,13 +615,13 @@
   }
 
   .tab-btn {
-    font-size: 0.7rem;
-    padding: 4px 10px;
+    font-size: 0.65rem;
+    padding: 4px 8px;
   }
 
   .form-input {
     font-size: 0.8rem;
-    padding: 8px 10px;
+    padding: 6px 10px;
   }
 
   .signin-btn {
