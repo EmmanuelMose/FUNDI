@@ -1,5 +1,5 @@
 // aside/CustomerDrawer.tsx
-import React from 'react';
+//import React from 'react';
 import { drawerData, type DrawerData } from './DrawerData';
 import './CustomerDrawer.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';

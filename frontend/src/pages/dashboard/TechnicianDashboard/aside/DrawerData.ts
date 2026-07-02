@@ -1,12 +1,11 @@
-// aside/DrawerData.ts
+// aside/DrawerData.ts (Technician)
 import { 
   AiOutlineDashboard, 
-  AiOutlineCalendar, 
+  AiOutlineSearch, 
   AiOutlineBook, 
   AiOutlineWallet, 
   AiOutlineBell,
-  AiOutlineSetting,
-  AiOutlineSearch
+  AiOutlineSetting
 } from "react-icons/ai";
 
 export type DrawerData = {
