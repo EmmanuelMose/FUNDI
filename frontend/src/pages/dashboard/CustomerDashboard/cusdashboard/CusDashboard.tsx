@@ -1,6 +1,6 @@
 // cusdashboard/Dashboard.tsx
 import React, { useState } from 'react';
-import './Dashboard.css';
+import './CusDashboard.css';
 
 const CusDashboard: React.FC = () => {
   const [activeJobTab, setActiveJobTab] = useState('active');
