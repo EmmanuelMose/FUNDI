@@ -16,10 +16,12 @@ interface RegisterFormData {
   confirmPassword: string;
   specialization?: string;
   yearsOfExperience?: number;
+  adminKey?: string;
 }
 
 const Register: React.FC = () => {
-  const [role, setRole] = useState<'customer' | 'technician'>('customer');
+  const [role, setRole] = useState<'customer' | 'technician' | 'admin'>('customer');
+  const [showAdminFields, setShowAdminFields] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -41,6 +43,11 @@ const Register: React.FC = () => {
     navigate('/login');
   };
 
+  const handleRoleSelect = (selectedRole: 'customer' | 'technician' | 'admin') => {
+    setRole(selectedRole);
+    setShowAdminFields(selectedRole === 'admin');
+  };
+
   return (
     <div className="register-page">
       <div className="register-container">
@@ -58,7 +65,7 @@ const Register: React.FC = () => {
           <div className="role-tabs">
             <button
               className={`role-btn ${role === 'customer' ? 'active' : ''}`}
-              onClick={() => setRole('customer')}
+              onClick={() => handleRoleSelect('customer')}
             >
               <span className="role-icon">🏠</span>
               <span className="role-label">Customer</span>
@@ -66,18 +73,28 @@ const Register: React.FC = () => {
             </button>
             <button
               className={`role-btn ${role === 'technician' ? 'active' : ''}`}
-              onClick={() => setRole('technician')}
+              onClick={() => handleRoleSelect('technician')}
             >
               <span className="role-icon">🔧</span>
               <span className="role-label">Technician</span>
               <span className="role-desc">Accept jobs & earn</span>
+            </button>
+            <button
+              className={`role-btn ${role === 'admin' ? 'active' : ''}`}
+              onClick={() => handleRoleSelect('admin')}
+            >
+              <span className="role-icon">👑</span>
+              <span className="role-label">Admin</span>
+              <span className="role-desc">Manage platform</span>
             </button>
           </div>
 
           <p className="role-hint">
             {role === 'customer'
               ? 'Need to book a service? Select Customer above.'
-              : 'Joining as a technician? Select Technician above.'}
+              : role === 'technician'
+              ? 'Joining as a technician? Select Technician above.'
+              : 'Managing the platform? Select Admin above.'}
           </p>
 
           <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
@@ -243,6 +260,27 @@ const Register: React.FC = () => {
               </>
             )}
 
+            {role === 'admin' && (
+              <div className="form-group">
+                <label className="form-label">Admin Access Key</label>
+                <input
+                  type="password"
+                  className={`form-input ${errors.adminKey ? 'error' : ''}`}
+                  placeholder="Enter admin access key"
+                  {...register('adminKey', {
+                    required: 'Admin access key is required',
+                    minLength: {
+                      value: 6,
+                      message: 'Admin key must be at least 6 characters',
+                    },
+                  })}
+                />
+                {errors.adminKey && (
+                  <span className="error-message">{errors.adminKey.message}</span>
+                )}
+              </div>
+            )}
+
             <div className="form-group">
               <label className="form-label">Password</label>
               <input
@@ -301,8 +339,8 @@ const Register: React.FC = () => {
         <div className="register-right">
           <div className="register-image-container">
             <img
-              src={role === 'customer' ? CustomerImage : TechnicianImage}
-              alt={role === 'customer' ? 'Customer' : 'Technician'}
+              src={role === 'customer' ? CustomerImage : role === 'technician' ? TechnicianImage : CustomerImage}
+              alt={role === 'customer' ? 'Customer' : role === 'technician' ? 'Technician' : 'Admin'}
               className="register-image"
             />
           </div>
@@ -310,12 +348,16 @@ const Register: React.FC = () => {
             <h3 className="benefits-title">
               {role === 'customer'
                 ? 'Home services, on demand'
-                : 'Turn your skills into income'}
+                : role === 'technician'
+                ? 'Turn your skills into income'
+                : 'Manage your platform'}
             </h3>
             <p className="benefits-desc">
               {role === 'customer'
                 ? 'Verified plumbers and electricians — booked in minutes.'
-                : 'Accept jobs near you, set your own hours, and get paid instantly via M-Pesa.'}
+                : role === 'technician'
+                ? 'Accept jobs near you, set your own hours, and get paid instantly via M-Pesa.'
+                : 'Full control over users, bookings, payments, and platform settings.'}
             </p>
           </div>
         </div>
