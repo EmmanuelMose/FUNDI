@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import './Services.css';
 import Image4 from '../../assets/images/Image4.jpg';
-import Image5 from '../../assets/images/Image5.jpeg';
-import Image6 from '../../assets/images/Image6.jpeg';
-import Image8 from '../../assets/images/Image8.jpeg';
 import Image9 from '../../assets/images/Image9.jpeg';
 import PlasteringImage from '../../assets/images/PlasteringImage.jpeg';
 import PlumbingImage from '../../assets/images/PlumbingImage.jpeg';
