@@ -1,142 +1,89 @@
 import React, { useState } from 'react';
 import './Services.css';
+import Image1 from '../../assets/images/Image1.jpg';
+import Image2 from '../../assets/images/Image2.jpg';
+import Image3 from '../../assets/images/Image3.jpeg';
+import Image4 from '../../assets/images/Image4.jpg';
+import Image5 from '../../assets/images/Image5.jpeg';
+import Image6 from '../../assets/images/Image6.jpeg';
+import Image7 from '../../assets/images/Image7.jpeg';
+import Image8 from '../../assets/images/Image8.jpeg';
+import Image9 from '../../assets/images/Image9.jpeg';
+import Image10 from '../../assets/images/Image10.jpeg';
 
 const Services: React.FC = () => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
 
   const services = [
     {
+      id: 'moving-transport',
+      image: Image1,
+      title: 'Moving & Transport',
+      description: 'Local moves, delivery & logistics',
+      fullDescription: 'Reliable moving and transport services including local moves, furniture delivery, and logistics coordination.'
+    },
+    {
+      id: 'cleaning',
+      image: Image2,
+      title: 'Cleaning Services',
+      description: 'Deep cleaning, carpet & upholstery',
+      fullDescription: 'Comprehensive cleaning services including deep cleaning, carpet shampooing, upholstery cleaning, and post-construction clean-up.'
+    },
+    {
+      id: 'roofing',
+      image: Image3,
+      title: 'Roofing',
+      description: 'Repairs, installation & maintenance',
+      fullDescription: 'Professional roofing services including leak repairs, roof installation, maintenance, and gutter cleaning.'
+    },
+    {
+      id: 'locksmith',
+      image: Image4,
+      title: 'Locksmith',
+      description: 'Locks, keys & security systems',
+      fullDescription: 'Professional locksmith services including lock installation, key cutting, security system setup, and emergency lockout assistance.'
+    },
+    {
+      id: 'gardening',
+      image: Image5,
+      title: 'Gardening',
+      description: 'Lawn care, landscaping & pruning',
+      fullDescription: 'Professional gardening services including lawn maintenance, landscape design, tree pruning, and garden clean-up.'
+    },
+    {
+      id: 'plastering',
+      image: Image6,
+      title: 'Plastering',
+      description: 'Walls, ceilings & drywall repair',
+      fullDescription: 'Expert plastering services for walls, ceilings, drywall installation, and surface finishing.'
+    },
+    {
       id: 'electrical',
-      icon: '⚡',
+      image: Image7,
       title: 'Electrical',
       description: 'Wiring, sockets, lighting & fans',
       fullDescription: 'Complete electrical solutions including wiring installation, socket repairs, lighting fixtures, and ceiling fan installations.'
     },
     {
       id: 'plumbing',
-      icon: '🔧',
+      image: Image8,
       title: 'Plumbing',
       description: 'Pipes, drains, taps, bathrooms & water heaters',
       fullDescription: 'Professional plumbing services including pipe repairs, drain unblocking, tap installation, bathroom fittings, and water heater maintenance.'
     },
     {
-      id: 'fridge',
-      icon: '❄️',
-      title: 'Fridge Repair',
-      description: 'Cooling faults, gas refills & compressors',
-      fullDescription: 'Expert refrigerator repair including cooling system diagnosis, gas refilling, compressor replacement, and temperature control fixes.'
-    },
-    {
-      id: 'washing',
-      icon: '👕',
-      title: 'Washing Machine',
-      description: 'Repairs, installation & servicing',
-      fullDescription: 'Comprehensive washing machine services covering repairs, new installations, routine servicing, and parts replacement.'
-    },
-    {
-      id: 'cooker',
-      icon: '🔥',
-      title: 'Cooker & Oven',
-      description: 'Gas, electric, microwave & oven repairs',
-      fullDescription: 'Full range of cooking appliance repairs including gas cookers, electric ovens, microwaves, and built-in oven units.'
-    },
-    {
-      id: 'television',
-      icon: '📺',
-      title: 'Television',
-      description: 'Screen, board & smart TV repairs',
-      fullDescription: 'Television repair services covering screen replacements, main board repairs, smart TV software issues, and connectivity problems.'
-    },
-    {
-      id: 'security',
-      icon: '🔒',
-      title: 'Security Systems',
-      description: 'CCTV, alarms, gates & access control',
-      fullDescription: 'Complete security system installation and maintenance including CCTV cameras, burglar alarms, automatic gates, and access control systems.'
-    },
-    {
-      id: 'solar',
-      icon: '☀️',
-      title: 'Solar & Power',
-      description: 'Solar, inverters & backup power',
-      fullDescription: 'Renewable energy solutions including solar panel installation, inverter systems, battery backup, and power management systems.'
-    },
-    {
-      id: 'appliances',
-      icon: '🔌',
-      title: 'Small Appliances',
-      description: 'Kettles, irons, blenders & AC units',
-      fullDescription: 'Repair and maintenance of small household appliances including kettles, irons, blenders, and air conditioning units.'
-    },
-    {
-      id: 'other',
-      icon: '🛠️',
-      title: 'Other Technical',
-      description: 'DSTV, WiFi, doorbells & home tech',
-      fullDescription: 'General home technology services including DSTV installation, WiFi network setup, doorbell installation, and smart home integration.'
-    },
-    {
       id: 'painting',
-      icon: '🎨',
+      image: Image9,
       title: 'Painting & Decorating',
       description: 'Interior, exterior & wall papering',
       fullDescription: 'Professional painting and decorating services including interior walls, exterior surfaces, wallpaper installation, and finish coatings.'
     },
     {
       id: 'carpentry',
-      icon: '🔨',
+      image: Image10,
       title: 'Carpentry',
       description: 'Furniture, cabinets & woodwork',
       fullDescription: 'Expert carpentry services covering custom furniture, kitchen cabinets, shelving, doors, and general woodwork repairs.'
-    },
-    {
-      id: 'flooring',
-      icon: '🏠',
-      title: 'Flooring',
-      description: 'Tiles, vinyl, laminate & wood',
-      fullDescription: 'Complete flooring solutions including tile installation, vinyl flooring, laminate fitting, and hardwood floor repairs.'
-    },
-    {
-      id: 'gardening',
-      icon: '🌿',
-      title: 'Gardening',
-      description: 'Lawn care, landscaping & pruning',
-      fullDescription: 'Professional gardening services including lawn maintenance, landscape design, tree pruning, and garden clean-up.'
-    },
-    {
-      id: 'cleaning',
-      icon: '🧹',
-      title: 'Cleaning Services',
-      description: 'Deep cleaning, carpet & upholstery',
-      fullDescription: 'Comprehensive cleaning services including deep cleaning, carpet shampooing, upholstery cleaning, and post-construction clean-up.'
-    },
-    {
-      id: 'moving',
-      icon: '🚚',
-      title: 'Moving & Transport',
-      description: 'Local moves, delivery & logistics',
-      fullDescription: 'Reliable moving and transport services including local moves, furniture delivery, and logistics coordination.'
-    },
-    {
-      id: 'roofing',
-      icon: '🏗️',
-      title: 'Roofing',
-      description: 'Repairs, installation & maintenance',
-      fullDescription: 'Professional roofing services including leak repairs, roof installation, maintenance, and gutter cleaning.'
-    },
-    {
-      id: 'plastering',
-      icon: '🧱',
-      title: 'Plastering',
-      description: 'Walls, ceilings & drywall repair',
-      fullDescription: 'Expert plastering services for walls, ceilings, drywall installation, and surface finishing.'
-    },
-    {
-      id: 'locksmith',
-      icon: '🔑',
-      title: 'Locksmith',
-      description: 'Locks, keys & security systems',
-      fullDescription: 'Professional locksmith services including lock installation, key cutting, security system setup, and emergency lockout assistance.'
     }
   ];
 
@@ -154,7 +101,7 @@ const Services: React.FC = () => {
           <h2 className="services-title">WHAT WE OFFER</h2>
           <h3 className="services-subtitle">Services built for everyday life</h3>
           <p className="services-description">
-            From electrical faults to fridge repairs and solar installs - book any home service in minutes.
+            From moving and transport to cleaning and roofing - book any home service in minutes.
           </p>
           <p className="services-hint">Hover a service to see what's covered</p>
         </div>
@@ -176,7 +123,9 @@ const Services: React.FC = () => {
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
             >
-              <div className="service-icon">{service.icon}</div>
+              <div className="service-image-wrapper">
+                <img src={service.image} alt={service.title} className="service-image" />
+              </div>
               <h4 className="service-title">{service.title}</h4>
               <p className="service-description">{service.description}</p>
               {hoveredService === service.id && (
