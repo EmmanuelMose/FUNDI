@@ -4,6 +4,9 @@ import Image1 from '../../assets/images/Image1.jpg';
 import Image2 from '../../assets/images/Image2.jpg';
 import Image3 from '../../assets/images/Image3.png';
 import Image4 from '../../assets/images/Image4.jpg';
+import Image5 from '../../assets/images/Image5.jpeg';
+import Image10 from '../../assets/images/Image10.jpeg';
+
 
 const HowItWorks: React.FC = () => {
   const steps = [
@@ -46,14 +49,14 @@ const HowItWorks: React.FC = () => {
       title: 'GPS-based matching',
       description: 'Jobs are broadcast only to technicians who are actually near your location.',
       icon: '📍',
-      image: Image1
+      image: Image5
     },
     {
       id: 'feature3',
       title: 'Real-time tracking',
       description: 'Watch job status update live - from requested to assigned to completed.',
       icon: '🔄',
-      image: Image2
+      image: Image10
     }
   ];
 
