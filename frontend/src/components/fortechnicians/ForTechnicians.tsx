@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ForTechnicians.css';
-import TechnicianImage from '../../assets/images/TechnicianImage.jpg';
+import Video3 from '../../assets/images/Vedio3.mp4';
 
 const ForTechnicians: React.FC = () => {
   const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        setIsPlaying(false);
+      });
+    }
+  }, []);
 
   const handleApply = () => {
     navigate('/register');
@@ -12,6 +22,18 @@ const ForTechnicians: React.FC = () => {
 
   const handleLogin = () => {
     navigate('/login');
+  };
+
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
   };
 
   return (
@@ -48,7 +70,21 @@ const ForTechnicians: React.FC = () => {
         </div>
 
         <div className="technicians-illustration">
-          <img src={TechnicianImage} alt="Technicians" className="technicians-image" />
+          <div className="technicians-video-container" onClick={handleVideoClick}>
+            <video
+              ref={videoRef}
+              className="technicians-video"
+              loop
+              muted
+              playsInline
+            >
+              <source src={Video3} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className={`video-overlay ${isPlaying ? 'hidden' : ''}`}>
+              <div className="play-button">▶</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
