@@ -1,21 +1,22 @@
-// techniciandashboard/Dashboard.tsx
+// cusdashboard/Dashboard.tsx
 import React, { useState } from 'react';
-import './TechDashboard.css';
+import './CusDashboard.css';
 
-const TechDashboard: React.FC = () => {
-  const [activeStatusTab, setActiveStatusTab] = useState('active');
+const CusDashboard: React.FC = () => {
+  const [activeJobTab, setActiveJobTab] = useState('active');
 
   const stats = [
-    { label: 'Total Jobs', value: '0' },
-    { label: 'Active Jobs', value: '0' },
+    { label: 'Total Bookings', value: '0' },
+    { label: 'Active Now', value: '0' },
     { label: 'Completed', value: '0' },
-    { label: 'Earnings', value: 'KSh 0' },
   ];
 
-  const quickActions = [
-    { name: 'Find Jobs' },
-    { name: 'My Schedule' },
-    { name: 'Earnings' },
+  const serviceCategories = [
+    { name: 'Fridge Repair' },
+    { name: 'Wiring' },
+    { name: 'Plumbing' },
+    { name: 'Lighting' },
+    { name: 'Sockets' },
   ];
 
   return (
@@ -23,16 +24,8 @@ const TechDashboard: React.FC = () => {
       <div className="dashboard-header">
         <div className="dashboard-greeting">
           <h1 className="greeting-title">GOOD MORNING, EMMANUEL</h1>
-          <p className="greeting-subtitle">Ready to earn today?</p>
+          <p className="greeting-subtitle">What do you need fixed today?</p>
         </div>
-      </div>
-
-      <div className="quick-actions">
-        {quickActions.map((action, index) => (
-          <button key={index} className="action-btn">
-            <span className="action-name">{action.name}</span>
-          </button>
-        ))}
       </div>
 
       <div className="stats-grid">
@@ -46,47 +39,42 @@ const TechDashboard: React.FC = () => {
         ))}
       </div>
 
-      <div className="jobs-section">
-        <div className="jobs-header">
-          <h2 className="section-title">My Jobs</h2>
-          <div className="jobs-tabs">
-            <button 
-              className={`tab-btn ${activeStatusTab === 'active' ? 'active' : ''}`}
-              onClick={() => setActiveStatusTab('active')}
-            >
-              Active
+      <div className="services-section">
+        <h2 className="section-title">WHAT DO YOU NEED FIXED?</h2>
+        <div className="services-grid">
+          {serviceCategories.map((service, index) => (
+            <button key={index} className="service-btn">
+              <span className="service-name">{service.name}</span>
             </button>
-            <button 
-              className={`tab-btn ${activeStatusTab === 'completed' ? 'active' : ''}`}
-              onClick={() => setActiveStatusTab('completed')}
-            >
-              Completed
-            </button>
-            <button 
-              className={`tab-btn ${activeStatusTab === 'cancelled' ? 'active' : ''}`}
-              onClick={() => setActiveStatusTab('cancelled')}
-            >
-              Cancelled
-            </button>
-          </div>
-        </div>
-        <div className="jobs-content">
-          <div className="empty-state">
-            <p className="empty-text">No jobs in this category</p>
-            <p className="empty-subtext">Jobs you accept will appear here</p>
-          </div>
+          ))}
         </div>
       </div>
 
-      <div className="availability-section">
-        <div className="availability-status">
-          <span className="status-dot online"></span>
-          <span className="status-label">You are online</span>
+      <div className="jobs-section">
+        <div className="jobs-tabs">
+          <button 
+            className={`tab-btn ${activeJobTab === 'active' ? 'active' : ''}`}
+            onClick={() => setActiveJobTab('active')}
+          >
+            ACTIVE JOB
+          </button>
+          <button 
+            className={`tab-btn ${activeJobTab === 'past' ? 'active' : ''}`}
+            onClick={() => setActiveJobTab('past')}
+          >
+            PAST JOBS
+          </button>
         </div>
-        <button className="toggle-status-btn">Go Offline</button>
+        <div className="jobs-content">
+          <p className="empty-state">No jobs in this category</p>
+        </div>
+      </div>
+
+      <div className="settings-link">
+        <span className="settings-text">SETTINGS</span>
       </div>
     </div>
   );
 };
 
-export default TechDashboard;
+export default CusDashboard;

@@ -5,7 +5,7 @@ import Image2 from '../../assets/images/Image2.jpg';
 import Image3 from '../../assets/images/Image3.jpeg';
 import Image4 from '../../assets/images/Image4.jpg';
 import Image5 from '../../assets/images/Image5.jpg';
-import Image10 from '../../assets/images/Image10.jpg';
+import Image10 from '../../assets/images/Image10.jpeg';
 
 const HowItWorks: React.FC = () => {
   const steps = [
