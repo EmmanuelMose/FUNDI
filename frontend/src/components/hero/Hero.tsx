@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Hero.css';
-import heroImage from '../../assets/images/HeroImage.jpg';
+import Image9 from '../../assets/images/Image9.jpeg';
 
 const Hero: React.FC = () => {
   const [] = useState('');
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
 
         <div className="hero-illustration">
           <div className="hero-image-container">
-            <img src={heroImage} alt="Hero" className="hero-image" />
+            <img src={Image9} alt="Hero" className="hero-image" />
           </div>
         </div>
       </div>
