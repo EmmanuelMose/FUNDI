@@ -4,12 +4,12 @@ import './AdDashboard.css';
 
 const AdDashboard: React.FC = () => {
   const stats = [
-    { label: 'Total Users', value: '0', icon: '👥', color: '#4caf50' },
-    { label: 'Total Fundis', value: '0', icon: '🔧', color: '#e08a0e' },
-    { label: 'Total Bookings', value: '0', icon: '📋', color: '#2196f3' },
-    { label: 'Revenue', value: 'KSh 0', icon: '💰', color: '#ff9800' },
-    { label: 'Pending Fundis', value: '0', icon: '⏳', color: '#ff4757' },
-    { label: 'Active Jobs', value: '0', icon: '🟢', color: '#4caf50' },
+    { label: 'Total Users', value: '0', color: '#4caf50' },
+    { label: 'Total Fundis', value: '0', color: '#e08a0e' },
+    { label: 'Total Bookings', value: '0', color: '#2196f3' },
+    { label: 'Revenue', value: 'KSh 0', color: '#ff9800' },
+    { label: 'Pending Fundis', value: '0', color: '#ff4757' },
+    { label: 'Active Jobs', value: '0', color: '#4caf50' },
   ];
 
   const recentActivities = [
@@ -30,7 +30,6 @@ const AdDashboard: React.FC = () => {
       <div className="stats-grid">
         {stats.map((stat, index) => (
           <div key={index} className="stat-card" style={{ borderColor: stat.color + '33' }}>
-            <div className="stat-icon">{stat.icon}</div>
             <div className="stat-content">
               <span className="stat-value">{stat.value}</span>
               <span className="stat-label">{stat.label}</span>
@@ -59,19 +58,15 @@ const AdDashboard: React.FC = () => {
           <h2 className="section-title">Quick Actions</h2>
           <div className="quick-actions-grid">
             <button className="quick-action-btn">
-              <span className="action-icon">👤</span>
               <span className="action-name">Manage Users</span>
             </button>
             <button className="quick-action-btn">
-              <span className="action-icon">🔧</span>
               <span className="action-name">Verify Fundis</span>
             </button>
             <button className="quick-action-btn">
-              <span className="action-icon">📋</span>
               <span className="action-name">View Bookings</span>
             </button>
             <button className="quick-action-btn">
-              <span className="action-icon">💰</span>
               <span className="action-name">Payment Reports</span>
             </button>
           </div>

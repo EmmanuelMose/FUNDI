@@ -6,16 +6,16 @@ const TechDashboard: React.FC = () => {
   const [activeStatusTab, setActiveStatusTab] = useState('active');
 
   const stats = [
-    { label: 'Total Jobs', value: '0', icon: '📋' },
-    { label: 'Active Jobs', value: '0', icon: '🟢' },
-    { label: 'Completed', value: '0', icon: '✅' },
-    { label: 'Earnings', value: 'KSh 0', icon: '💰' },
+    { label: 'Total Jobs', value: '0' },
+    { label: 'Active Jobs', value: '0' },
+    { label: 'Completed', value: '0' },
+    { label: 'Earnings', value: 'KSh 0' },
   ];
 
   const quickActions = [
-    { name: 'Find Jobs', icon: '🔍', color: '#e08a0e' },
-    { name: 'My Schedule', icon: '📅', color: '#4caf50' },
-    { name: 'Earnings', icon: '💰', color: '#2196f3' },
+    { name: 'Find Jobs' },
+    { name: 'My Schedule' },
+    { name: 'Earnings' },
   ];
 
   return (
@@ -30,7 +30,6 @@ const TechDashboard: React.FC = () => {
       <div className="quick-actions">
         {quickActions.map((action, index) => (
           <button key={index} className="action-btn">
-            <span className="action-icon">{action.icon}</span>
             <span className="action-name">{action.name}</span>
           </button>
         ))}
@@ -39,7 +38,6 @@ const TechDashboard: React.FC = () => {
       <div className="stats-grid">
         {stats.map((stat, index) => (
           <div key={index} className="stat-card">
-            <div className="stat-icon">{stat.icon}</div>
             <div className="stat-content">
               <span className="stat-value">{stat.value}</span>
               <span className="stat-label">{stat.label}</span>
@@ -74,7 +72,6 @@ const TechDashboard: React.FC = () => {
         </div>
         <div className="jobs-content">
           <div className="empty-state">
-            <span className="empty-icon">🔧</span>
             <p className="empty-text">No jobs in this category</p>
             <p className="empty-subtext">Jobs you accept will appear here</p>
           </div>
