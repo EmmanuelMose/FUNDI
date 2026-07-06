@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Hero.css';
-import Image9 from '../../assets/images/Image9.jpeg';
+import Vedio4 from '../../assets/images/Vedio4.mp4';
 
 const Hero: React.FC = () => {
-  const [] = useState('');
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        setIsPlaying(false);
+      });
+    }
+  }, []);
 
   const scrollToServices = () => {
     const el = document.getElementById('services');
@@ -13,6 +22,18 @@ const Hero: React.FC = () => {
   const scrollToHowItWorks = () => {
     const el = document.getElementById('how-it-works');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
   };
 
   return (
@@ -51,8 +72,21 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="hero-illustration">
-          <div className="hero-image-container">
-            <img src={Image9} alt="Hero" className="hero-image" />
+          <div className="hero-video-container" onClick={handleVideoClick}>
+            <video
+              ref={videoRef}
+              className="hero-video"
+              loop
+              muted
+              playsInline
+              poster={Vedio4}
+            >
+              <source src={Vedio4} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className={`video-overlay ${isPlaying ? 'hidden' : ''}`}>
+              <div className="play-button">▶</div>
+            </div>
           </div>
         </div>
       </div>
