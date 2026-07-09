@@ -11,7 +11,6 @@ import CustomerDashboard from "../src/pages/dashboard/CustomerDashboard/Customer
 import TechnicianDashboard from "../src/pages/dashboard/TechnicianDashboard/TechnicianDashboard";
 import AdminDashboard from "../src/pages/dashboard/AdminDashboard/AdminDashboard";
 
-// For Admin Dashboard
 import AdDashboard from "../src/pages/dashboard/AdminDashboard/admindashboard/AdDashboard";
 import Users from "../src/pages/dashboard/AdminDashboard/users/Users";
 import Fundis from "../src/pages/dashboard/AdminDashboard/fundis/Fundis";
@@ -20,7 +19,6 @@ import AdminPayments from "../src/pages/dashboard/AdminDashboard/payments/Paymen
 import Reports from "../src/pages/dashboard/AdminDashboard/reports/Reports";
 import AdminSettings from "../src/pages/dashboard/AdminDashboard/settings/Settings";
 
-// For Customer Dashboard
 import CusDashboard from "../src/pages/dashboard/CustomerDashboard/cusdashboard/CusDashboard";
 import BookService from "../src/pages/dashboard/CustomerDashboard/bookservice/BookService";
 import MyBookings from "../src/pages/dashboard/CustomerDashboard/mybookings/MyBookings";
@@ -29,7 +27,6 @@ import CustomerPayments from "../src/pages/dashboard/CustomerDashboard/payments/
 import CustomerNotifications from "../src/pages/dashboard/CustomerDashboard/notifications/Notifications";
 import CustomerSettings from "../src/pages/dashboard/CustomerDashboard/settings/Settings";
 
-// For Technician Dashboard
 import TechDashboard from "../src/pages/dashboard/TechnicianDashboard/techdashboard/TechDashboard";
 import AvailableJobs from "../src/pages/dashboard/TechnicianDashboard/availablejobs/AvailableJobs";
 import MyJobs from "../src/pages/dashboard/TechnicianDashboard/myjobs/MyJobs";
@@ -37,34 +34,43 @@ import Earnings from "../src/pages/dashboard/TechnicianDashboard/earnings/Earnin
 import TechNotifications from "../src/pages/dashboard/TechnicianDashboard/notifications/Notifications";
 import TechSettings from "../src/pages/dashboard/TechnicianDashboard/settings/Settings";
 
+import Error from "../src/components/error/Error";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
+    errorElement: <Error />,
   },
   {
     path: "/login",
     element: <Login />,
+    errorElement: <Error />,
   },
   {
     path: "/register",
     element: <Register />,
+    errorElement: <Error />,
   },
   {
     path: "/forgot-password",
     element: <ForgotPassword />,
+    errorElement: <Error />,
   },
   {
     path: "/verify-reset-code",
     element: <VerifyResetCode />,
+    errorElement: <Error />,
   },
   {
     path: "/reset-password",
     element: <ResetPassword />,
+    errorElement: <Error />,
   },
   {
     path: "/customer-dashboard",
     element: <CustomerDashboard />,
+    errorElement: <Error />,
     children: [
       { path: "", element: <CusDashboard /> },
       { path: "book-service", element: <BookService /> },
@@ -78,6 +84,7 @@ const router = createBrowserRouter([
   {
     path: "/technician-dashboard",
     element: <TechnicianDashboard />,
+    errorElement: <Error />,
     children: [
       { path: "", element: <TechDashboard /> },
       { path: "techavailablejobs", element: <AvailableJobs /> },
@@ -90,6 +97,7 @@ const router = createBrowserRouter([
   {
     path: "/admin-dashboard",
     element: <AdminDashboard />,
+    errorElement: <Error />,
     children: [
       { path: "", element: <AdDashboard /> },
       { path: "users", element: <Users /> },
@@ -99,6 +107,10 @@ const router = createBrowserRouter([
       { path: "reports", element: <Reports /> },
       { path: "settings", element: <AdminSettings /> },
     ],
+  },
+  {
+    path: "*",
+    element: <Error />,
   },
 ]);
 
