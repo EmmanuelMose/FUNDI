@@ -1,3 +1,4 @@
+// src/components/HowItWorks.tsx
 import React from 'react';
 import './HowItWorks.css';
 import Image2 from '../../assets/images/Image2.jpg';

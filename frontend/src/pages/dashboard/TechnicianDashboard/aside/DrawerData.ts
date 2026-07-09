@@ -5,7 +5,8 @@ import {
   AiOutlineBook, 
   AiOutlineWallet, 
   AiOutlineBell,
-  AiOutlineSetting
+  AiOutlineSetting,
+  AiOutlineLogout
 } from "react-icons/ai";
 
 export type DrawerData = {
@@ -51,5 +52,11 @@ export const technicianDrawerData: DrawerData[] = [
     label: "Settings",
     icon: AiOutlineSetting,
     link: "techsettings",
+  },
+  {
+    id: "techlogout",
+    label: "Logout",
+    icon: AiOutlineLogout,
+    link: "logout",
   },
 ];
