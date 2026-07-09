@@ -6,8 +6,11 @@ import Image10 from '../../assets/images/Image10.jpeg';
 import post1 from '../../assets/images/post1.jpeg';
 import post2 from '../../assets/images/post2.jpeg';
 import RecentImage from '../../assets/images/RecentImage.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 const HowItWorks: React.FC = () => {
+  const navigate = useNavigate();
+
   const steps = [
     {
       id: 'step1',
@@ -59,6 +62,10 @@ const HowItWorks: React.FC = () => {
     }
   ];
 
+  const handleBookService = () => {
+    navigate('/login');
+  };
+
   return (
     <section className="how-it-works" id="how-it-works">
       <div className="hiw-container">
@@ -106,7 +113,9 @@ const HowItWorks: React.FC = () => {
         </div>
 
         <div className="hiw-cta">
-          <button className="cta-button">Book a service →</button>
+          <button className="cta-button" onClick={handleBookService}>
+            Book a service →
+          </button>
         </div>
       </div>
     </section>
