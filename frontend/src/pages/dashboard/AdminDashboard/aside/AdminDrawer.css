@@ -1,4 +1,4 @@
-
+/* aside/AdminDrawer.css */
 .admin-drawer {
   display: flex;
   flex-direction: column;
@@ -159,6 +159,28 @@
   transition: opacity 0.3s ease;
 }
 
+.drawer-item.logout-item {
+  color: rgba(255, 68, 68, 0.7);
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+}
+
+.drawer-item.logout-item:hover {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.08);
+}
+
+.drawer-item.logout-item.active {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.12);
+  border-color: rgba(255, 68, 68, 0.2);
+}
+
+.drawer-item.logout-item .drawer-icon {
+  color: inherit;
+}
+
 .drawer-footer {
   margin-top: auto;
   padding-top: 16px;
@@ -177,6 +199,10 @@
 
 .drawer-user:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+.drawer-user:hover .user-name {
+  color: #e08a0e;
 }
 
 .user-avatar {
@@ -205,6 +231,7 @@
   font-weight: 600;
   color: #ffffff;
   white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 .user-role {

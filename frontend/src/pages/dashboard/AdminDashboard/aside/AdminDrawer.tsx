@@ -1,8 +1,10 @@
 // aside/AdminDrawer.tsx
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { adminDrawerData, type DrawerData } from './DrawerData';
 import './AdminDrawer.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import Logout from '../../../../components/logout/Logout';
 
 type AdminDrawerProps = {
   isSidebarOpen: boolean;
@@ -15,6 +17,21 @@ const AdminDrawer = ({
   onToggle, 
   isMobile 
 }: AdminDrawerProps) => {
+  const navigate = useNavigate();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  const handleLogoutClick = () => {
+    setShowLogoutModal(true);
+  };
+
+  const handleLogoutConfirm = () => {
+    console.log('Admin logged out successfully');
+  };
+
+  const handleUserClick = () => {
+    navigate('/admin-dashboard/settings');
+  };
+
   return (
     <>
       {isMobile && (
@@ -44,24 +61,41 @@ const AdminDrawer = ({
         </div>
 
         <nav className="drawer-nav">
-          {adminDrawerData.map((item: DrawerData) => (
-            <NavLink
-              key={item.id}
-              to={item.link}
-              className={({ isActive }) =>
-                `drawer-item ${isActive ? 'active' : ''}`
-              }
-            >
-              <span className="drawer-icon">
-                <item.icon size={isSidebarOpen ? 20 : 22} />
-              </span>
-              {isSidebarOpen && <span className="drawer-label">{item.label}</span>}
-            </NavLink>
-          ))}
+          {adminDrawerData.map((item: DrawerData) => {
+            if (item.id === 'logout') {
+              return (
+                <button
+                  key={item.id}
+                  onClick={handleLogoutClick}
+                  className="drawer-item logout-item"
+                >
+                  <span className="drawer-icon">
+                    <item.icon size={isSidebarOpen ? 20 : 22} />
+                  </span>
+                  {isSidebarOpen && <span className="drawer-label">{item.label}</span>}
+                </button>
+              );
+            }
+            
+            return (
+              <NavLink
+                key={item.id}
+                to={item.link}
+                className={({ isActive }) =>
+                  `drawer-item ${isActive ? 'active' : ''}`
+                }
+              >
+                <span className="drawer-icon">
+                  <item.icon size={isSidebarOpen ? 20 : 22} />
+                </span>
+                {isSidebarOpen && <span className="drawer-label">{item.label}</span>}
+              </NavLink>
+            );
+          })}
         </nav>
 
         <div className="drawer-footer">
-          <div className="drawer-user">
+          <div className="drawer-user" onClick={handleUserClick}>
             <div className="user-avatar">AD</div>
             {isSidebarOpen && (
               <div className="user-info">
@@ -72,6 +106,12 @@ const AdminDrawer = ({
           </div>
         </div>
       </aside>
+
+      <Logout 
+        isOpen={showLogoutModal}
+        onClose={() => setShowLogoutModal(false)}
+        onConfirm={handleLogoutConfirm}
+      />
     </>
   );
 };

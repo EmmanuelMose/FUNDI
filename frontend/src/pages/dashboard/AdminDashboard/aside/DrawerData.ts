@@ -6,7 +6,8 @@ import {
   AiOutlineBook, 
   AiOutlineWallet, 
   AiOutlineFileText,
-  AiOutlineSetting
+  AiOutlineSetting,
+  AiOutlineLogout
 } from "react-icons/ai";
 
 export type DrawerData = {
@@ -58,5 +59,11 @@ export const adminDrawerData: DrawerData[] = [
     label: "Settings",
     icon: AiOutlineSetting,
     link: "settings",
+  },
+  {
+    id: "logout",
+    label: "Logout",
+    icon: AiOutlineLogout,
+    link: "logout",
   },
 ];
