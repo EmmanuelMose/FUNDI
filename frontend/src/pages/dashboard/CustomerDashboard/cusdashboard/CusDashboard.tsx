@@ -19,9 +19,6 @@ const CusDashboard: React.FC = () => {
     { name: 'Sockets', icon: '🔌' },
   ];
 
-  const recentActivities = [
-    { id: 1, title: 'No recent bookings', time: '' }
-  ];
 
   return (
     <div className="dashboard-page">
