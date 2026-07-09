@@ -1,4 +1,4 @@
-// cusdashboard/Dashboard.tsx
+// cusdashboard/CusDashboard.tsx
 import React, { useState } from 'react';
 import './CusDashboard.css';
 
@@ -12,18 +12,22 @@ const CusDashboard: React.FC = () => {
   ];
 
   const serviceCategories = [
-    { name: 'Fridge Repair' },
-    { name: 'Wiring' },
-    { name: 'Plumbing' },
-    { name: 'Lighting' },
-    { name: 'Sockets' },
+    { name: 'Fridge Repair', icon: '❄️' },
+    { name: 'Wiring', icon: '⚡' },
+    { name: 'Plumbing', icon: '🔧' },
+    { name: 'Lighting', icon: '💡' },
+    { name: 'Sockets', icon: '🔌' },
+  ];
+
+  const recentActivities = [
+    { id: 1, title: 'No recent bookings', time: '' }
   ];
 
   return (
     <div className="dashboard-page">
       <div className="dashboard-header">
         <div className="dashboard-greeting">
-          <h1 className="greeting-title">GOOD MORNING, EMMANUEL</h1>
+          <h1 className="greeting-title">Good Morning, Emmanuel</h1>
           <p className="greeting-subtitle">What do you need fixed today?</p>
         </div>
       </div>
@@ -40,10 +44,14 @@ const CusDashboard: React.FC = () => {
       </div>
 
       <div className="services-section">
-        <h2 className="section-title">WHAT DO YOU NEED FIXED?</h2>
+        <div className="section-header">
+          <h2 className="section-title">What do you need fixed?</h2>
+          <p className="section-subtitle">Select a service category to get started</p>
+        </div>
         <div className="services-grid">
           {serviceCategories.map((service, index) => (
             <button key={index} className="service-btn">
+              <span className="service-icon">{service.icon}</span>
               <span className="service-name">{service.name}</span>
             </button>
           ))}
@@ -51,27 +59,48 @@ const CusDashboard: React.FC = () => {
       </div>
 
       <div className="jobs-section">
-        <div className="jobs-tabs">
-          <button 
-            className={`tab-btn ${activeJobTab === 'active' ? 'active' : ''}`}
-            onClick={() => setActiveJobTab('active')}
-          >
-            ACTIVE JOB
-          </button>
-          <button 
-            className={`tab-btn ${activeJobTab === 'past' ? 'active' : ''}`}
-            onClick={() => setActiveJobTab('past')}
-          >
-            PAST JOBS
-          </button>
+        <div className="jobs-header">
+          <h2 className="section-title">Your Jobs</h2>
+          <div className="jobs-tabs">
+            <button 
+              className={`tab-btn ${activeJobTab === 'active' ? 'active' : ''}`}
+              onClick={() => setActiveJobTab('active')}
+            >
+              Active
+            </button>
+            <button 
+              className={`tab-btn ${activeJobTab === 'past' ? 'active' : ''}`}
+              onClick={() => setActiveJobTab('past')}
+            >
+              Past Jobs
+            </button>
+          </div>
         </div>
         <div className="jobs-content">
-          <p className="empty-state">No jobs in this category</p>
+          <div className="empty-state">
+            <span className="empty-icon">📋</span>
+            <p className="empty-text">No jobs in this category</p>
+            <p className="empty-subtext">Book a service to get started</p>
+          </div>
         </div>
       </div>
 
-      <div className="settings-link">
-        <span className="settings-text">SETTINGS</span>
+      <div className="quick-actions-section">
+        <h2 className="section-title">Quick Actions</h2>
+        <div className="quick-actions-grid">
+          <button className="quick-action-btn primary">
+            <span className="quick-action-icon">🔍</span>
+            <span className="quick-action-label">Find a Technician</span>
+          </button>
+          <button className="quick-action-btn secondary">
+            <span className="quick-action-icon">📅</span>
+            <span className="quick-action-label">View Bookings</span>
+          </button>
+          <button className="quick-action-btn tertiary">
+            <span className="quick-action-icon">💬</span>
+            <span className="quick-action-label">Contact Support</span>
+          </button>
+        </div>
       </div>
     </div>
   );
