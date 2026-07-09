@@ -6,6 +6,9 @@ import Image3 from '../../assets/images/Image3.jpeg';
 import Image4 from '../../assets/images/Image4.jpg';
 import Image5 from '../../assets/images/Image5.jpg';
 import Image10 from '../../assets/images/Image10.jpeg';
+import post1 from '../../assets/images/post1.jpeg';
+import post2 from '../../assets/images/post2.jpeg';
+import RecentImage from '../../assets/images/RecentImage.jpeg';
 
 const HowItWorks: React.FC = () => {
   const steps = [
@@ -15,7 +18,7 @@ const HowItWorks: React.FC = () => {
       title: 'Post your request',
       description: 'Describe what you need and drop your location. Takes under 60 seconds.',
       tag: '<60 sec',
-      image: Image1
+      image: post1
     },
     {
       id: 'step2',
@@ -31,7 +34,7 @@ const HowItWorks: React.FC = () => {
       title: 'Pay securely via M-Pesa',
       description: 'Once the job is done to your satisfaction, pay directly from your phone.',
       tag: 'M-Pesa payments',
-      image: Image3
+      image: RecentImage
     }
   ];
 
@@ -48,7 +51,7 @@ const HowItWorks: React.FC = () => {
       title: 'GPS-based matching',
       description: 'Jobs are broadcast only to technicians who are actually near your location.',
       icon: '📍',
-      image: Image5
+      image: post2
     },
     {
       id: 'feature3',
