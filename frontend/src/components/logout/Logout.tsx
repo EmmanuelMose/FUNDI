@@ -1,4 +1,4 @@
-// src/components/logout/Logout.tsx
+// components/logout/Logout.tsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Logout.css';
@@ -13,22 +13,17 @@ const Logout: React.FC<LogoutProps> = ({ isOpen, onClose, onConfirm }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Clear all user authentication data
     localStorage.removeItem('userToken');
     localStorage.removeItem('userRole');
     localStorage.removeItem('userEmail');
     localStorage.removeItem('userId');
     sessionStorage.clear();
     
-    // Call custom onConfirm if provided
     if (onConfirm) {
       onConfirm();
     }
     
-    // Navigate to landing page
     navigate('/');
-    
-    // Close the modal
     onClose();
   };
 
